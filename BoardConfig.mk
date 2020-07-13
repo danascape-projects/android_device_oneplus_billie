@@ -20,8 +20,6 @@ include build/make/target/board/BoardConfigMainlineCommon.mk
 TARGET_NO_RECOVERY :=
 BOARD_AVB_ROLLBACK_INDEX :=
 
-BOARD_VENDOR := oneplus
-
 DEVICE_PATH := device/oneplus/billie
 
 # Arch
