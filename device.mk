@@ -248,7 +248,6 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libqdMetaData \
     libtinyxml \
-    libvulkan \
     libqdMetaData \
     libsdmcore \
     libsdmutils
