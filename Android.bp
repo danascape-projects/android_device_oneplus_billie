@@ -1,6 +1,6 @@
 soong_namespace {
-    imports: ["hardware/qcom-caf/bootctrl"],
 }
+
 
 install_symlink {
     name: "firmware_wlan_mac.bin_symlink",
