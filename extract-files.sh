@@ -72,6 +72,10 @@ function blob_fixup() {
         vendor/etc/msm_irqbalance.conf)
             sed -i "s/IGNORED_IRQ=19,21,38$/&,115,332/" "${2}"
             ;;
+        vendor/lib64/hw/fingerprint.default.so)
+            [ "$2" = "" ] && return 0
+            sed -i "s/fingerprint.egis/fingerprint\x00\x00\x00\x00\x00/" "{$2}"
+            ;;
         vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.bitra.so)
             "${SIGSCAN}" -p "CF 0A 00 94" -P "1F 20 03 D5" -f "${2}"
             ;;
