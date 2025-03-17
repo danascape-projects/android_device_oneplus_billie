@@ -14,6 +14,12 @@
 # limitations under the License.
 #
 
+include build/make/target/board/BoardConfigMainlineCommon.mk
+
+# Settings to be overriden
+TARGET_NO_RECOVERY :=
+BOARD_AVB_ROLLBACK_INDEX :=
+
 BOARD_VENDOR := oneplus
 
 DEVICE_PATH := device/oneplus/billie
@@ -139,9 +145,6 @@ ODM_MANIFEST_8_FILES := $(DEVICE_PATH)/manifest_8.xml
 ODM_MANIFEST_10_FILES := $(DEVICE_PATH)/manifest_10.xml
 ODM_MANIFEST_SKUS += 2 8 10
 
-# Partitions - Metadata
-BOARD_USES_METADATA_PARTITION := true
-
 # Partitions - Boot
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -160,10 +163,6 @@ TARGET_COPY_OUT_ODM := odm
 BOARD_ONEPLUS_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor
 BOARD_ONEPLUS_DYNAMIC_PARTITIONS_SIZE := 7511998464
 
-# Partitions - Product
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_COPY_OUT_PRODUCT := product
-
 # Partitions - Recovery
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 
@@ -178,22 +177,15 @@ BOARD_SUPER_PARTITION_SIZE := 15032385536
 # Partitions - System
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 
-# Partitions - System_ext
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
-
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-
 # Partitions - Userdata
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 236009631744
 
-TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_USES_MKE2FS := true
 
 # Partitions - Vendor
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
 TARGET_BOARD_PLATFORM := lito
