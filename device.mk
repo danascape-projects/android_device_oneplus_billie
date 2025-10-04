@@ -442,7 +442,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libOmxCore \
-    libOmxCore \
     libOmxVdec \
     libOmxVenc \
     libOmxVidcCommon \
