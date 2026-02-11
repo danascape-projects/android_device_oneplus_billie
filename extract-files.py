@@ -69,6 +69,8 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace('CF 0A 00 94', '1F 20 03 D5'),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
+    ('vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so'): blob_fixup()
+        .replace_needed('libutils.so', 'libutils-v32.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
